@@ -23,6 +23,9 @@
                         <a class="nav-link active" href="{% url 'contacts' %}">Контакты</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'blog' %}">Блог</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link disabled">В разработке</a>
                     </li>
                 </ul>
@@ -44,13 +47,13 @@
             <div class="col-6 col-md">
                 <h5>Категории</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Рассылки</a></li>
+                    <li><a class="text-muted" href="{% url 'category' %}">Для собак</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md">
                 <h5>Дополнительно</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Мы пишем</a></li>
+                    <li><a class="text-muted" href="{% url 'blog' %}">Мы пишем</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md">
