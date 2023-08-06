@@ -35,9 +35,9 @@ class Category(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=100, verbose_name='Заголовок')
-    slug = models.CharField(max_length=250, verbose_name='slug')
+    slug = models.CharField(max_length=250, verbose_name='slug', **NULLABLE)
     body = models.TextField(verbose_name='Содержимое')
-    preview = models.ImageField(upload_to='previews/blog/', verbose_name='Превью', **NULLABLE)
+    preview = models.ImageField(upload_to='blog/', verbose_name='Превью', **NULLABLE)
     create_date = models.DateTimeField(verbose_name='Дата создания', auto_now=True)
     is_published = models.BooleanField(default=False, verbose_name='опубликовано')
     views_count = models.IntegerField(default=0, verbose_name='Количество просмотров')
