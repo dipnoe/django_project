@@ -1,28 +1,28 @@
 from django.shortcuts import render
+from django.urls import reverse
+from django.views.generic import TemplateView, ListView
 
-from catalog.models import Category, Product
+from catalog.models import Category, Product, Blog
 
 
-def home(request):
-    context = {
-        'object_list': Category.objects.all()[:3],
+class HomeView(TemplateView):
+    template_name = 'catalog/home.html'
+    extra_context = {
         'title': "It`s all in the DNA"
     }
-    return render(request, 'catalog/home.html', context)
+
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data['object_list'] = Category.objects.all()[:3]
+        return context_data
 
 
-def category(request):
-    context = {
-        'object_list': Category.objects.all()
-    }
-    return render(request, 'catalog/category.html', context)
+class CategoryView(ListView):
+    model = Category
 
 
-def product(request, pk):
-    context = {
-        'object_list': Product.objects.filter(category=pk)
-    }
-    return render(request, 'catalog/product.html', context)
+class ProductView(ListView):
+    model = Product
 
 
 def contacts(request):
@@ -32,3 +32,8 @@ def contacts(request):
         message = request.POST.get('message')
         print(f'Новый контакт!\n{name} ({phone}) написал: {message}\n')
     return render(request, 'catalog/contacts.html')
+
+
+class BlogView(ListView):
+    model = Blog
+    fields = ['title', 'body', '']
