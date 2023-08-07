@@ -40,7 +40,7 @@ class Blog(models.Model):
     preview = models.ImageField(upload_to='blog/', verbose_name='Превью', **NULLABLE)
     create_date = models.DateTimeField(verbose_name='Дата создания', auto_now=True)
     is_published = models.BooleanField(default=False, verbose_name='опубликовано')
-    views_count = models.IntegerField(default=0, verbose_name='Количество просмотров')
+    views_count = models.PositiveSmallIntegerField(default=0, verbose_name='Количество просмотров', editable=False)
 
     def __str__(self):
         return self.title
