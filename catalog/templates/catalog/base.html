@@ -134,10 +134,10 @@
     <div class="container">
         <div class="offcanvas-body">
             <ul class="navbar-nav flex-grow-1 justify-content-between">
-                <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Домашняя страница</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'category' %}">Услуги</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Блог</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'contacts' %}">Контакты</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'catalog:home' %}">Домашняя страница</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'catalog:category' %}">Услуги</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'blog:blog' %}">Блог</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'catalog:contacts' %}">Контакты</a></li>
                 <li class="nav-item"><a class="nav-link disabled">В разработке</a></li>
                 <svg class="bi" width="24" height="24">
                     <use xlink:href="#cart"/>
@@ -161,19 +161,19 @@
             <div class="col-6 col-md">
                 <h5>Категории</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="{% url 'category' %}">Для собак</a></li>
+                    <li><a class="text-muted" href="{% url 'catalog:category' %}">Для собак</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md">
                 <h5>Дополнительно</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="{% url 'blog' %}">Мы пишем</a></li>
+                    <li><a class="text-muted" href="{% url 'blog:blog' %}">Мы пишем</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md">
                 <h5>О нас</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="{% url 'contacts' %}">Контакты</a></li>
+                    <li><a class="text-muted" href="{% url 'catalog:contacts' %}">Контакты</a></li>
                 </ul>
             </div>
         </div>
